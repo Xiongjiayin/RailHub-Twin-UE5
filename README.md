@@ -18,6 +18,18 @@
 展示关键设备（如龙门吊）的实时传感器数据（如载荷、振动等），支持预测性维护。
 ![Sensor Data Stream](docs/assets/sensor_chart.png)
 
+### 4. 能效分析
+分析不同作业模式下的能源消耗，优化运营策略，实现绿色物流。
+![Energy Efficiency Chart](docs/assets/energy_efficiency_chart.png)
+
+### 5. 堆场拥堵度热力图
+实时可视化堆场各区域的拥堵情况，辅助调度决策，提高周转效率。
+![Congestion Heatmap](docs/assets/congestion_heatmap.png)
+
+### 6. 设备健康度评分
+基于传感器数据和历史维护记录，评估关键设备的健康状况，支持预测性维护。
+![Equipment Health Score Chart](docs/assets/health_score_chart.png)
+
 ## 🚀 项目简介
 
 本项目旨在构建一个**铁路集装箱中心站的数字孪生模拟系统**，利用 **Unreal Engine 5 (UE5)** 进行高逼真可视化，并通过**实时数据接口**实现与后端业务逻辑和模拟层的双向交互。该系统能够对铁路集装箱中心站的运营进行实时监控、预测分析和优化，为智慧物流和铁路现代化提供技术支持。
@@ -27,6 +39,7 @@
 *   **高逼真可视化**: 基于 Unreal Engine 5 强大的渲染能力，精确还原铁路集装箱中心站的物理布局和动态作业场景。
 *   **实时数据集成**: 通过 WebSocket 和 RESTful API 实现与后端模拟层和真实业务系统的实时数据交互，确保虚拟世界与物理世界同步。
 *   **业务逻辑模拟**: 后端 Python 模拟层实现集装箱进出站、堆场管理、龙门吊作业、集卡调度等核心业务流程的仿真。
+*   **🤖 AI 智能体赋能**: 深度集成大语言模型 (LLM)，提供自然语言调度指令解析、自动化运营报告生成以及基于传感器数据的异常诊断。
 *   **可扩展架构**: 采用分层架构设计，易于集成更多传感器数据、AI 预测模型和决策支持功能。
 *   **开源与模块化**: 提供清晰的代码结构和详细的文档，方便开发者理解、扩展和二次开发。
 
@@ -80,7 +93,8 @@ RailHub-Twin-UE5/
 │   ├── simulator/                  # 模拟层代码
 │   │   └── terminal_simulator.py   # 铁路集装箱中心站模拟器示例
 │   └── api/                        # API 和 WebSocket 接口层代码
-│       └── main.py                 # FastAPI 应用示例
+│       ├── main.py                 # FastAPI 应用示例 (包含 AI 路由)
+│       └── ai_agent.py             # LLM 智能体实现 (调度、报告、诊断)
 └── docs/
     └── ue5_integration/            # UE5 集成相关文档
         └── ue5_integration_guide.md  # UE5 集成指南
