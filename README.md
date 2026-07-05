@@ -2,6 +2,22 @@
 
 ![RailHub Digital Twin Mockup](docs/assets/railhub_twin_mockup.png)
 
+## 📊 演示与数据分析 (Demonstration & Analytics)
+
+本系统不仅提供高逼真的 3D 可视化，还集成了深度的数据分析与监控功能。以下是系统实时生成的监控图表示例：
+
+### 1. 吞吐量趋势分析
+实时统计每日集装箱处理量（TEU），帮助运营人员掌握中心站的作业负荷趋势。
+![Throughput Chart](docs/assets/throughput_chart.png)
+
+### 2. 资产利用率监控
+监控龙门吊、集卡及列车的实时利用率，优化资源调度，减少设备闲置。
+![Asset Utilization Chart](docs/assets/utilization_chart.png)
+
+### 3. 传感器实时流数据
+展示关键设备（如龙门吊）的实时传感器数据（如载荷、振动等），支持预测性维护。
+![Sensor Data Stream](docs/assets/sensor_chart.png)
+
 ## 🚀 项目简介
 
 本项目旨在构建一个**铁路集装箱中心站的数字孪生模拟系统**，利用 **Unreal Engine 5 (UE5)** 进行高逼真可视化，并通过**实时数据接口**实现与后端业务逻辑和模拟层的双向交互。该系统能够对铁路集装箱中心站的运营进行实时监控、预测分析和优化，为智慧物流和铁路现代化提供技术支持。
