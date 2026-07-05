@@ -2,33 +2,6 @@
 
 ![RailHub Digital Twin Mockup](docs/assets/railhub_twin_mockup.png)
 
-## 📊 演示与数据分析 (Demonstration & Analytics)
-
-本系统不仅提供高逼真的 3D 可视化，还集成了深度的数据分析与监控功能。以下是系统实时生成的监控图表示例：
-
-### 1. 吞吐量趋势分析
-实时统计每日集装箱处理量（TEU），帮助运营人员掌握中心站的作业负荷趋势。
-![Throughput Chart](docs/assets/throughput_chart.png)
-
-### 2. 资产利用率监控
-监控龙门吊、集卡及列车的实时利用率，优化资源调度，减少设备闲置。
-![Asset Utilization Chart](docs/assets/utilization_chart.png)
-
-### 3. 传感器实时流数据
-展示关键设备（如龙门吊）的实时传感器数据（如载荷、振动等），支持预测性维护。
-![Sensor Data Stream](docs/assets/sensor_chart.png)
-
-### 4. 能效分析
-分析不同作业模式下的能源消耗，优化运营策略，实现绿色物流。
-![Energy Efficiency Chart](docs/assets/energy_efficiency_chart.png)
-
-### 5. 堆场拥堵度热力图
-实时可视化堆场各区域的拥堵情况，辅助调度决策，提高周转效率。
-![Congestion Heatmap](docs/assets/congestion_heatmap.png)
-
-### 6. 设备健康度评分
-基于传感器数据和历史维护记录，评估关键设备的健康状况，支持预测性维护。
-![Equipment Health Score Chart](docs/assets/health_score_chart.png)
 
 ## 🚀 项目简介
 
