@@ -1,5 +1,7 @@
 # RailHub-Twin-UE5: 铁路集装箱中心站数字孪生模拟
 
+![RailHub Digital Twin Mockup](docs/assets/railhub_twin_mockup.png)
+
 ## 🚀 项目简介
 
 本项目旨在构建一个**铁路集装箱中心站的数字孪生模拟系统**，利用 **Unreal Engine 5 (UE5)** 进行高逼真可视化，并通过**实时数据接口**实现与后端业务逻辑和模拟层的双向交互。该系统能够对铁路集装箱中心站的运营进行实时监控、预测分析和优化，为智慧物流和铁路现代化提供技术支持。
