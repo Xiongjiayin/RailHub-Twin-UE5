@@ -1,14 +1,12 @@
 from fastapi import FastAPI, WebSocket
 import asyncio
 import json
-import random
 from datetime import datetime
 
-# 导入模拟器（在实际项目中，这可能是一个独立运行的进程）
-# 这里为了演示，我们直接在 FastAPI 中模拟数据推送
-# from ..simulator.terminal_simulator import TerminalSimulator
+from ..simulator.terminal_simulator import TerminalSimulator
 
 app = FastAPI()
+simulator = TerminalSimulator()
 
 @app.get("/")
 async def root():
@@ -25,28 +23,18 @@ async def websocket_endpoint(websocket: WebSocket):
     
     try:
         while True:
-            # 模拟从模拟器获取数据
-            mock_data = {
-                "type": "entity_update",
+            simulator.step()
+            current_state = simulator.get_state()
+            
+            # 封装数据，添加时间戳和类型
+            data_to_send = {
+                "type": "digital_twin_update",
                 "timestamp": int(datetime.now().timestamp()),
-                "entities": [
-                    {
-                        "id": "crane_01",
-                        "type": "crane",
-                        "position": {"x": 100 + random.uniform(-1, 1), "y": 50 + random.uniform(-1, 1), "z": 15},
-                        "status": "operating"
-                    },
-                    {
-                        "id": "truck_01",
-                        "type": "truck",
-                        "position": {"x": 20 + random.uniform(-0.5, 0.5), "y": 80 + random.uniform(-0.5, 0.5), "z": 0},
-                        "status": "driving"
-                    }
-                ]
+                "entities": current_state
             }
             
-            await websocket.send_text(json.dumps(mock_data))
-            await asyncio.sleep(0.5) # 每 0.5 秒推送一次数据
+            await websocket.send_text(json.dumps(data_to_send))
+            await asyncio.sleep(0.1) # 每 0.1 秒推送一次数据，模拟更实时的数据流
             
     except Exception as e:
         print(f"WebSocket connection closed: {e}")
